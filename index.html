@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Toraja Leaf Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Toraja Leaf Guessing Game</h1>
+  <p id="instructions">Player 1: Choose the cut position!</p>
+
+  <!-- Leaf image -->
+  <img src="kambunni1.jpg" alt="Leaf" id="leaf">
+
+  <!-- Spots (example: 3 spots) -->
+  <div class="spots">
+    <button onclick="chooseCut(1)">Spot 1</button>
+    <button onclick="chooseCut(2)">Spot 2</button>
+    <button onclick="chooseCut(3)">Spot 3</button>
+  </div>
+
+  <!-- Feedback -->
+  <div class="message" id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
