@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guess the Cut - Toraja Leaf Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Toraja Leaf Game</h1>
+  <p>Player 2: Guess the cut position!</p>
+
+  <img src="leaf.jpg" alt="Leaf" id="leaf">
+
+  <div class="spots">
+    <button onclick="guessCut(1)">Spot 1</button>
+    <button onclick="guessCut(2)">Spot 2</button>
+    <button onclick="guessCut(3)">Spot 3</button>
+  </div>
+
+  <div class="message" id="result"></div>
+
+  <script>
+    // Get the cut position from the URL
+    const params = new URLSearchParams(window.location.search);
+    const cutSpot = parseInt(params.get("cut"));
+
+    function guessCut(spot) {
+      const result = document.getElementById("result");
+      if (spot === cutSpot) {
+        result.textContent = "🎉 Correct! You found the cut!";
+      } else {
+        result.textContent = "❌ Wrong guess, try again!";
+      }
+    }
+  </script>
+</body>
+</html>
