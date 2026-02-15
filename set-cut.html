@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Set the Cut - Toraja Leaf Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Toraja Leaf Game</h1>
+  <p>Player 1: Choose the cut position and share the link!</p>
+
+  <img src="leaf.jpg" alt="Leaf" id="leaf">
+
+  <div class="spots">
+    <button onclick="setCut(1)">Spot 1</button>
+    <button onclick="setCut(2)">Spot 2</button>
+    <button onclick="setCut(3)">Spot 3</button>
+  </div>
+
+  <div class="message" id="result"></div>
+
+  <script>
+    function setCut(spot) {
+      const result = document.getElementById("result");
+      // Encode the chosen spot in the URL
+      const link = window.location.origin + window.location.pathname.replace("set-cut.html","guess.html") + "?cut=" + spot;
+      result.innerHTML = "✅ Cut set! Share this link with Player 2:<br><a href='" + link + "' target='_blank'>" + link + "</a>";
+    }
+  </script>
+</body>
+</html>
